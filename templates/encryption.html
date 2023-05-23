@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Encryption</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='encryption.css')}}">
+</head>
+<body>
+    <div class="banner">
+        <div class="navbar">
+            <ul>
+                <li><a href="{{url_for('encryption')}}">UPLOAD</a></li>
+                <li><a href="{{url_for('decryption')}}">DOWNLOAD</a></li>
+            </ul>
+        </div>
+           
+    </div>
+
+    <div class="content">
+        <form name="keyinput" action="/encrypt" method="post" enctype="multipart/form-data">
+            <p id="title">FILE ENCRYPTION!!!</p><br>
+
+            <label for="file">Select file:</label><br>
+            <input type="file" name="file" class="upload-box" />
+            <br>
+
+            <label for="key">Enter encryption key:</label>
+            <div class="input-field">
+                <input type="password" name="key" placeholder="Enter the shared key" required>
+            </div>
+            <p>{{output}}</p>
+            <div class="btn-field">
+                <button type="submit" value="Encrypt"><span></span>Upload</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
+

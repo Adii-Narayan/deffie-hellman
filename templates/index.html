@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User1</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='index.css')}}">
+</head>
+<body>
+    <div class="banner">
+        <div class="navbar">
+            <ul>
+                <li><a href="{{url_for('encryption')}}">UPLOAD</a></li>
+                <li><a href="{{url_for('decryption')}}">DOWNLOAD</a></li>
+            </ul>
+        </div>
+           
+    </div>
+
+    <div class="content">
+        <form name="keyinput" action="/generate_key" method="post">
+            <p id="title">GENERATE SHARED KEY!!!</p><br>
+            <label>Enter the private keys</label>
+            <div class="input-field">
+                <input type="text" name="x" placeholder="Enter the first private key" required>
+            </div>
+            <div class="input-field">
+                <input type="text" name="t" placeholder="Enter the second private key" required>
+            </div>
+            
+            <div class="btn-field">
+                <button type="submit"><span></span>Generate</button>
+            </div>
+
+            <p>Shared key = {{final_keys}}</p><br>
+            <P id="comm">***Please copy and store the shared key for further use***</P>
+        </form>
+    </div>
+
+</body>
+</html>
+
